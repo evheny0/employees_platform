@@ -1,24 +1,7 @@
-# README
+# Employees list
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For this task you are given a list of employees. The output of the task is an endpoint which returns the same list of employees but with the relevant country specific information added to each employee.
 
-Things you may want to cover:
+# Code description
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Entry point is API controller [`Api::V1::EmployeesController`](https://github.com/evheny0/employees_platform/blob/master/app/controllers/api/v1/employees_controller.rb)
