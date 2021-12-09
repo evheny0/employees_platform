@@ -13,7 +13,7 @@ docker-compose up web
 ##### Employees endpoint
 `curl -X GET "http://localhost:3000/api/v1/employees" -H  "accept: application/json"`
 
-##### API Documentation
+##### API Documentation (Swagger)
 http://localhost:3000/api-docs/index.html
 
 ### Code description
