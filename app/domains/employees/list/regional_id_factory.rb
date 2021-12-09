@@ -13,7 +13,7 @@ module Employees
 
       def call
         id_builder = REGION_MAPPING[@country.region]
-        id_builder.call(@employee) if id_builder
+        id_builder ? { regionalId: id_builder.call(@employee) } : {}
       end
     end
   end

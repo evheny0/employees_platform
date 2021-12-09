@@ -23,9 +23,7 @@ module Employees
       private
 
       def add_regional_id(result)
-        regional_id = Employees::List::RegionalIdFactory.new(@employee, @country).call
-        result.merge(regionalId: regional_id) if regional_id
-        result
+        result.merge(Employees::List::RegionalIdFactory.new(@employee, @country).call)
       end
     end
   end

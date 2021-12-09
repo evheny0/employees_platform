@@ -8,7 +8,7 @@ RSpec.describe Employees::List::RegionalIdFactory do
       let(:country) { instance_double(ApiClients::Restcountries::CountryInfo, region: "Europe") }
 
       it "generates special id" do
-        expect(described_class.new(employee, country).call).to eq("firstnamelastname11/11/1111")
+        expect(described_class.new(employee, country).call).to eq(regionalId: "firstnamelastname11/11/1111")
       end
     end
 
@@ -16,7 +16,7 @@ RSpec.describe Employees::List::RegionalIdFactory do
       let(:country) { instance_double(ApiClients::Restcountries::CountryInfo, region: "Asia") }
 
       it "generates special id" do
-        expect(described_class.new(employee, country).call).to eq("firstnamelastname11/11/1111")
+        expect(described_class.new(employee, country).call).to eq(regionalId: "firstnamelastname11/11/1111")
       end
     end
 
@@ -24,7 +24,7 @@ RSpec.describe Employees::List::RegionalIdFactory do
       let(:country) { instance_double(ApiClients::Restcountries::CountryInfo, region: "Africa") }
 
       it "returns nil" do
-        expect(described_class.new(employee, country).call).to be_nil
+        expect(described_class.new(employee, country).call).to eq({})
       end
     end
   end
