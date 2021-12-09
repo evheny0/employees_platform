@@ -34,6 +34,7 @@ module Omnipresent
 
     config.autoload_paths += %W[
       #{config.root}/app/repositories
+      #{config.root}/app/domains
       #{config.root}/lib
     ]
 
