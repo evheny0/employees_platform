@@ -9,7 +9,7 @@ paths:
       summary: list employees
       responses:
         '200':
-          description: list employees
+          description: Returns an array of employees
           content:
             application/json:
               example:
@@ -19,22 +19,22 @@ paths:
                 jobTitle: CTO
                 company: Test co
                 country: GBR
-                countryFullName: United Kingdom
-                currency:
-                - GBP
-                languages:
-                - eng
-                timezones:
-                - UTC-08:00
-                - UTC-05:00
-                - UTC-04:00
-                - UTC-03:00
-                - UTC-02:00
-                - UTC
-                - UTC+01:00
-                - UTC+02:00
-                - UTC+06:00
-                extraId: lisatestora11/07/1984
+                conutryInfo:
+                  fullName: United Kingdom
+                  currencies:
+                  - GBP
+                  languages:
+                  - eng
+                  timezones:
+                  - UTC-08:00
+                  - UTC-05:00
+                  - UTC-04:00
+                  - UTC-03:00
+                  - UTC-02:00
+                  - UTC
+                  - UTC+01:00
+                  - UTC+02:00
+                  - UTC+06:00
 servers:
 - url: http://{defaultHost}
   variables:

@@ -7,9 +7,9 @@ module ApiClients
 
       attribute :region, String
       attribute :common_name, String
-      attribute :currencies, String
-      attribute :languages, String
-      attribute :timezones, String
+      attribute :currencies, Array, of: String
+      attribute :languages, Array, of: String
+      attribute :timezones, Array, of: String
     end
 
     def self.instance
