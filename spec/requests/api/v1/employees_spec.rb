@@ -9,11 +9,25 @@ RSpec.describe 'api/v1/employees', type: :request do
         schema type: :array, items: {
           type: :object,
           properties: {
-            countryFullName: { type: :string },
-            currency: { type: :array, items: { type: :string } },
-            languages: { type: :array, items: { type: :string } },
+            firstName: { type: :string },
+            lastName: { type: :string },
+            dateOfBirth: { type: :string },
+            jobTitle: { type: :string },
+            company: { type: :string },
+            country: { type: :string },
+            regionalId: { type: :string },
+            conutryInfo: {
+              type: :object,
+              properties: {
+                fullName: { type: :string },
+                currencies: { type: :array, items: { type: :string } },
+                languages: { type: :array, items: { type: :string } },
+                timezones: { type: :array, items: { type: :string } },
+              },
+              required: [:fullName, :currencies, :languages, :timezones]
+            }
           },
-          required: [:countryFullName]
+          required: [:firstName, :lastName, :dateOfBirth, :jobTitle, :company, :country, :conutryInfo]
         }
 
         examples 'application/json' => [
@@ -44,15 +58,8 @@ RSpec.describe 'api/v1/employees', type: :request do
                 "UTC+06:00"
               ]
             }
-          },        ]
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+          },
+        ]
         run_test!
       end
     end
