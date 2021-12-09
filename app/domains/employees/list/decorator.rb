@@ -8,11 +8,11 @@ module Employees
 
       def as_json
         result = @employee.as_json.merge(
-          conutryInfo: {
-            fullName: @country.common_name,
-            currencies: @country.currencies,
-            languages: @country.languages,
-            timezones: @country.timezones,
+          "conutryInfo" => {
+            "fullName" => @country.common_name,
+            "currencies" => @country.currencies,
+            "languages" => @country.languages,
+            "timezones" => @country.timezones,
           }
         )
 
