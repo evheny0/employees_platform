@@ -1,0 +1,42 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/employees":
+    get:
+      summary: list employees
+      responses:
+        '200':
+          description: list employees
+          content:
+            application/json:
+              example:
+              - firstName: Lisa
+                lastName: Testora
+                dateOfBirth: 11/07/1984
+                jobTitle: CTO
+                company: Test co
+                country: GBR
+                countryFullName: United Kingdom
+                currency:
+                - GBP
+                languages:
+                - eng
+                timezones:
+                - UTC-08:00
+                - UTC-05:00
+                - UTC-04:00
+                - UTC-03:00
+                - UTC-02:00
+                - UTC
+                - UTC+01:00
+                - UTC+02:00
+                - UTC+06:00
+                extraId: lisatestora11/07/1984
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
