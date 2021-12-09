@@ -3,19 +3,19 @@ module Api
     class EmployeesController < Api::V1::ApplicationController
       def index
         employees = EmployeesRepository.new.all.map do |employee|
-          country_info = HTTParty.get("https://restcountries.com/v3.1/alpha/#{employee.country}").first
+          country = ApiClients::Restcountries.instance.by_code(employee.country)
 
           regional_id = nil
-          if country_info["region"] == "Europe" || country_info["region"] == "Asia"
+          if country.region == "Europe" || country.region == "Asia"
             regional_id = "#{employee.firstName}#{employee.lastName}#{employee.dateOfBirth}".downcase
           end
 
           employee.as_json.merge(
             conutryInfo: {
-              fullName: country_info["name"]["common"],
-              currencies: country_info["currencies"].keys,
-              languages: country_info["languages"].keys,
-              timezones: country_info["timezones"],
+              fullName: country.common_name,
+              currencies: country.currencies,
+              languages: country.languages,
+              timezones: country.timezones,
             },
             regionalId: regional_id
           )
