@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 gem 'httparty'
 gem 'rswag'
 gem 'rspec-rails'
+gem 'shallow_attributes'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

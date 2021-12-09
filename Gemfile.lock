@@ -185,6 +185,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    shallow_attributes (0.9.5)
     spring (3.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -221,6 +222,7 @@ DEPENDENCIES
   rspec-rails
   rswag
   sass-rails (>= 6)
+  shallow_attributes
   spring
   sqlite3 (~> 1.4)
   tzinfo-data
